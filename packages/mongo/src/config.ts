@@ -8,3 +8,4 @@ export const MONGODB_PASSWORD = process.env.MONGODB_PASSWORD || undefined;
 export const MONGODB_TLS = process.env.MONGODB_TLS || undefined;
 export const MONGODB_AUTH_MECHANISM =
   process.env.MONGODB_AUTH_MECHANISM || undefined;
+export const MONGODB_TLS_CA = process.env.MONGODB_TLS_CA || undefined;

@@ -5,6 +5,7 @@ import {
   MONGODB_DATABASE,
   MONGODB_PASSWORD,
   MONGODB_TLS,
+  MONGODB_TLS_CA,
   MONGODB_URI,
   MONGODB_USER,
 } from './config';
@@ -47,6 +48,10 @@ export const initMongoNoIndexes = async () => {
     }
     options.authMechanism = MONGODB_AUTH_MECHANISM;
     options.auth = { user: MONGODB_USER, password: MONGODB_PASSWORD };
+  }
+
+  if (MONGODB_TLS_CA != undefined) {
+    options.tlsCAFile = MONGODB_TLS_CA;
   }
 
   client = await MongoClient.connect(MONGODB_URI, {
